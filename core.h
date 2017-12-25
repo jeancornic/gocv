@@ -180,6 +180,7 @@ void Mat_DFT(Mat m, Mat dst);
 void Mat_Merge(struct Mats mats, Mat dst);
 void Mat_Normalize(Mat src, Mat dst, double alpha, double beta, int typ);
 double Norm(Mat src1, int normType);
+void Mat_Reduce(Mat src, Mat dst, int dim, int rtype, int dtype);
 
 TermCriteria TermCriteria_New(int typ, int maxCount, double epsilon);
 

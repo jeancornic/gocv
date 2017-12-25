@@ -161,6 +161,10 @@ double Norm(Mat src1, int normType) {
     return cv::norm(*src1, normType);
 }
 
+void Mat_Reduce(Mat src, Mat dst, int dim, int rtype, int dtype) {
+  cv::reduce(*src, *dst, dim, rtype, dtype);
+}
+
 // TermCriteria_New creates a new TermCriteria
 TermCriteria TermCriteria_New(int typ, int maxCount, double epsilon) {
     return new cv::TermCriteria(typ, maxCount, epsilon);
