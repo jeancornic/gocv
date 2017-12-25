@@ -45,6 +45,7 @@ void Resize(Mat src, Mat dst, Size sz, double fx, double fy, int interp);
 Mat GetRotationMatrix2D(Point center, double angle, double scale);
 void WarpAffine(Mat source, Mat dst, Mat rot_mat, Size dsize);
 void WarpAffineWithParams(Mat source, Mat dst, Mat rot_mat, Size dsize, int flags, int borderMode, Scalar borderValue);
+void MatchTemplate(Mat src, Mat tpl, Mat dst, int method);
 
 #ifdef __cplusplus
 }

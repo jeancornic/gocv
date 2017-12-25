@@ -183,3 +183,7 @@ void WarpAffineWithParams(Mat source, Mat dst, Mat rot_mat, Size dsize, int flag
   cv::Scalar c = cv::Scalar(borderValue.val1, borderValue.val2, borderValue.val3, borderValue.val4);
   cv::warpAffine(*source, *dst, *rot_mat, sz, flags, borderMode, c);
 }
+
+void MatchTemplate(Mat src, Mat tpl, Mat dst, int method) {
+  cv::matchTemplate(*src, *tpl, *dst, method);
+}

@@ -763,3 +763,29 @@ func WarpAffineWithParams(source, dst, m Mat, sz image.Point, flags Interpolatio
 	}
 	C.WarpAffineWithParams(source.p, dst.p, m.p, pSize, C.int(flags), C.int(borderType), bv)
 }
+
+type TemplateMatchingMethod int
+
+const (
+	TemplateMatchingSQDiff TemplateMatchingMethod = 0
+
+	TemplateMatchingSQDiffNormed = 1
+
+	TemplateMatchingCCorr = 2
+
+	TemplateMatchingCCorrNormed = 3
+
+	TemplateMatchingCCoeff = 4
+
+	TemplateMatchingCCoeffNormed = 5
+)
+
+// MatchTemplate Applies template matching to an image.
+//
+// For further details, please see:
+// https://docs.opencv.org/3.3.1/df/dfb/group__imgproc__object.html#ga586ebfb0a7fb604b35a23d85391329be
+func MatchTemplate(src, tpl, dst Mat, method TemplateMatchingMethod) {
+	// TODO: hanlde mask
+	C.MatchTemplate(src.p, tpl.p, dst.p, C.int(method))
+	return
+}
